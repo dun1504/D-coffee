@@ -7,6 +7,17 @@
 body {
     background-color: var(--bg);
 }
+html {
+    scroll-behavior: smooth;
+}
+/* @keyframes Ani{
+    form {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+} */
 :root {
     --main-color: #d3ad7f;
     --black: #13131a;
@@ -33,6 +44,10 @@ body {
 }
 .nav-list li {
     cursor: pointer;
+}
+a {
+    text-decoration: none;
+    color: white;
 }
 .nav-list li:hover {
     color: var(--main-color);
@@ -172,6 +187,13 @@ body {
     justify-content: center;
     gap: 8px;
 }
+.fa-trash {
+    margin-left: 10px;
+    
+}
+.remove {
+    display: none;
+}
 .item-icon i {
     padding: 12px;
     font-size: 20px;
@@ -207,6 +229,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
     padding: 30px 80px;
     text-align: center;
+    gap: 16px;
 }
 .review-head {
     color: white;
@@ -299,6 +322,35 @@ input[type=text] {
 .blog-img img:hover {
     animation: zoomSmall linear 1s;
 }
+.cart {
+    background-color: #d3ad7f;
+    width: 300px;
+    float: right;
+    top: 20px;
+    position: sticky;
+    padding: 20px;
+}
+.cart .add {
+    display: none;
+}
+.cart .remove {
+    display: block;
+}
+.cart .menu-box {
+    transition: 0.5s;
+    border-bottom: 1px solid #fff;
+}
+.cart-head {
+    display: flex;
+    justify-content: space-between;
+}
+i {
+    cursor: pointer;
+}
+.danger {
+    box-shadow: 0 10px 10px #ff8800;
+    transform: translate(0,-10px);
+}
 @keyframes zoomSmall {
     0% {
         scale: 1;
@@ -352,6 +404,7 @@ input[type=text] {
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+    padding: 0 10px;
 }
 .footer-item .item-end {
     padding: 8px 26px;

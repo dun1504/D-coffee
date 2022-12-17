@@ -18,22 +18,31 @@
           <img src="./img/logo.png" alt="" />
         </div>
         <ul class="nav-list">
-          <li>Trang chủ</li>
-          <li>Về chúng tôi</li>
-          <li>Thực đơn</li>
-          <li>Sản phẩm</li>
-          <li>Đánh giá</li>
-          <li>Liên hệ</li>
-          <li>Tin tức</li>
+          <li><a href="#home">Trang chủ</a></li>
+          <li><a href="#about">Về chúng tôi</a></li>
+          <li><a href="#menu">Thực đơn</a></li>
+          <li><a href="#product">Sản phẩm</a></li>
+          <li><a href="#review">Đánh giá</a></li>
+          <li><a href="#contact">Liên hệ</a></li>
+          <li><a href="#blog">Tin tức</a></li>
         </ul>
         <div class="nav-icon">
           <i class="fa-solid fa-magnifying-glass"></i>
-          <i class="fa-solid fa-cart-shopping"></i>
+          <i onclick="showcart()" class="fa-solid fa-cart-shopping"></i>
         </div>
       </div>
     </header>
     <main>
-      <div class="main-fresh">
+      <div class="cart" id="cart">
+        <div class="cart-head">
+          <div class="name">CART</div>
+        <div class="close" onclick="Close()">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        </div>
+        <div class="list-cart"></div>
+      </div>
+      <div class="main-fresh" id="home">
         <div class="fresh-content">
           <h1>CÀ PHÊ CHO BUỔI SÁNG</h1>
           <p>
@@ -45,7 +54,7 @@
           <button>Đặt Ngay</button>
         </div>
       </div>
-      <div class="about">
+      <div class="about" id="about">
         <div class="about-head">
           <h1><span>VỀ </span>CHÚNG TÔI</h1>
         </div>
@@ -72,50 +81,80 @@
           </div>
         </div>
       </div>
-      <div class="menu">
+      <div class="menu" id="menu">
         <div class="head-menu">
           <h1>THỰC <span>ĐƠN</span></h1>
         </div>
         <div class="menu-container">
-          <div class="menu-box">
+          <div class="menu-box" data-key="1">
             <img src="./img/menu-1.png" alt="" />
             <h2>Cà phê sữa đá</h2>
             <div class="price">$15.99 <span>20.99</span></div>
-            <button>Thêm vào giỏ hàng</button>
+            <div class="add--remove">
+            <button class="add">Thêm vào giỏ hàng</button>
+            <div class="remove" onclick="Remove(1)">
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            </div>
           </div>
-          <div class="menu-box">
+          <div class="menu-box"  data-key="2">
             <img src="./img/menu-1.png" alt="" />
             <h2>Cà phê sữa nóng</h2>
             <div class="price">$15.99 <span>20.99</span></div>
-            <button>Thêm vào giỏ hàng</button>
+            <div class="add--remove">
+              <button class="add">Thêm vào giỏ hàng</button>
+              <div class="remove" onclick="Remove(2)">
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              </div>
           </div>
-          <div class="menu-box">
+          <div class="menu-box"  data-key="3">
             <img src="./img/menu-1.png" alt="" />
             <h2>Bạc sỉu</h2>
             <div class="price">$15.99 <span>20.99</span></div>
-            <button>Thêm vào giỏ hàng</button>
+            <div class="add--remove">
+              <button class="add">Thêm vào giỏ hàng</button>
+              <div class="remove" onclick="Remove(3)">
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              </div>
           </div>
-          <div class="menu-box">
+          <div class="menu-box"  data-key="4">
             <img src="./img/menu-1.png" alt="" />
             <h2>Cà phê đen</h2>
             <div class="price">$15.99 <span>20.99</span></div>
-            <button>Thêm vào giỏ hàng</button>
+            <div class="add--remove">
+              <button class="add">Thêm vào giỏ hàng</button>
+              <div class="remove" onclick="Remove(4)">
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              </div>
           </div>
-          <div class="menu-box">
+          <div class="menu-box"  data-key="5">
             <img src="./img/menu-1.png" alt="" />
             <h2>Cà phê đen đá</h2>
             <div class="price">$15.99 <span>20.99</span></div>
-            <button>Thêm vào giỏ hàng</button>
+            <div class="add--remove">
+              <button class="add">Thêm vào giỏ hàng</button>
+              <div class="remove" onclick="Remove(5)">
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              </div>
           </div>
-          <div class="menu-box">
+          <div class="menu-box"  data-key="6">
             <img src="./img/menu-1.png" alt="" />
             <h2>Cà phê sữa nóng</h2>
             <div class="price">$15.99 <span>20.99</span></div>
-            <button>Thêm vào giỏ hàng</button>
+            <div class="add--remove">
+              <button class="add">Thêm vào giỏ hàng</button>
+              <div class="remove" onclick="Remove(6)">
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              </div>
           </div>
         </div>
       </div>
-      <div class="product">
+      <div class="product" id="product">
         <div class="product-head">
           <h1>ĐỒ <span>THÊM</span></h1>
         </div>
@@ -185,7 +224,7 @@
           </div>
         </div>
       </div>
-      <div class="review">
+      <div class="review" id="review">
         <div class="review-head">
           <h1>ĐÁNH <span>GIÁ</span></h1>
         </div>
@@ -251,7 +290,7 @@
           </div>
         </div>
       </div>
-      <div class="contact">
+      <div class="contact" id="contact">
         <div class="contact-head">
           <h1><span>LIÊN</span> HỆ</h1>
         </div>
@@ -286,7 +325,7 @@
           </div>
         </div>
       </div>
-      <div class="blog">
+      <div class="blog" id="blog">
         <div class="contact-head">
           <h1>TIN <span>TỨC</span></h1>
         </div>
@@ -329,7 +368,9 @@
               <h2>NOEL SẮP TỚI, ĐI ĐÂU ĐỂ CHILL?</h2>
               <h3>12/08/2022</h3>
               <p>
-                Những ngày cuối năm, đầu năm mới, bạn lên kế hoạch để gặp gỡ những người yêu, thương, quý, mến... Vậy bạn đã tìm được điểm hẹn lý tưởng chưa,...
+                Những ngày cuối năm, đầu năm mới, bạn lên kế hoạch để gặp gỡ
+                những người yêu, thương, quý, mến... Vậy bạn đã tìm được điểm
+                hẹn lý tưởng chưa,...
               </p>
               <button>Đọc thêm</button>
             </div>
@@ -360,5 +401,6 @@
         <p>Created By <span>Mr. Dun Hoang </span>| All right Reverved</p>
       </div>
     </footer>
+    <script src="main.js"></script>
   </body>
 </html>

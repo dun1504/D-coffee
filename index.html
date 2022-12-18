@@ -28,19 +28,40 @@
         </ul>
         <div class="nav-icon">
           <i class="fa-solid fa-magnifying-glass"></i>
-          <i onclick="showcart()" class="fa-solid fa-cart-shopping"></i>
+          <div class="navbar__bag">
+            <i onclick="showcart()" class="fa-solid fa-cart-shopping"></i>
+            <span id="count" class="navbar__bag-quantity">0</span>
+          </div>
+          <i id="menu-btn" onclick="showMenu()" class="fas fa-bars"></i>
         </div>
       </div>
     </header>
+
     <main>
+      <div id="mobile-nav-list" class="mobile-nav-list">
+          <i onclick="Close()" class="fa-solid fa-xmark"></i>
+        <ul>
+          <li><a href="#home">Trang chủ</a></li>
+          <li><a href="#about">Về chúng tôi</a></li>
+          <li><a href="#menu">Thực đơn</a></li>
+          <li><a href="#product">Sản phẩm</a></li>
+          <li><a href="#review">Đánh giá</a></li>
+          <li><a href="#contact">Liên hệ</a></li>
+          <li><a href="#blog">Tin tức</a></li>
+        </ul>
+      </div>
       <div class="cart" id="cart">
         <div class="cart-head">
-          <div class="name">CART</div>
-        <div class="close" onclick="Close()">
-          <i class="fa-solid fa-xmark"></i>
-        </div>
+          <strong class="name">GIỎ HÀNG</strong>
+          <div class="close" onclick="Close()">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
         </div>
         <div class="list-cart"></div>
+        <div class="price-cart">
+          <p>Tổng tiền:</p>
+          <p>20.000đ</p>
+        </div>
       </div>
       <div class="main-fresh" id="home">
         <div class="fresh-content">
@@ -87,70 +108,94 @@
         </div>
         <div class="menu-container">
           <div class="menu-box" data-key="1">
-            <img src="./img/menu-1.png" alt="" />
-            <h2>Cà phê sữa đá</h2>
-            <div class="price">$15.99 <span>20.99</span></div>
-            <div class="add--remove">
-            <button class="add">Thêm vào giỏ hàng</button>
-            <div class="remove" onclick="Remove(1)">
-              <i class="fa-solid fa-trash"></i>
+            <div class="boxx-left">
+              <img src="./img/menu-1.png" alt="" />
+              <h2>Cà phê sữa đá</h2>
             </div>
+            <div class="box-right">
+              <div class="price">$15.99 <span>20.99</span></div>
+              <div class="add--remove">
+                <button class="add">Thêm vào giỏ hàng</button>
+                <div class="remove" onclick="Remove(1)">
+                  <i class="fa-solid fa-trash"></i>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="menu-box"  data-key="2">
-            <img src="./img/menu-1.png" alt="" />
-            <h2>Cà phê sữa nóng</h2>
-            <div class="price">$15.99 <span>20.99</span></div>
-            <div class="add--remove">
-              <button class="add">Thêm vào giỏ hàng</button>
-              <div class="remove" onclick="Remove(2)">
-                <i class="fa-solid fa-trash"></i>
+          <div class="menu-box" data-key="2">
+            <div class="boxx-left">
+              <img src="./img/menu-1.png" alt="" />
+              <h2>Cà phê sữa đá</h2>
+            </div>
+            <div class="box-right">
+              <div class="price">$15.99 <span>20.99</span></div>
+              <div class="add--remove">
+                <button class="add">Thêm vào giỏ hàng</button>
+                <div class="remove" onclick="Remove(2)">
+                  <i class="fa-solid fa-trash"></i>
+                </div>
               </div>
-              </div>
+            </div>
           </div>
-          <div class="menu-box"  data-key="3">
-            <img src="./img/menu-1.png" alt="" />
-            <h2>Bạc sỉu</h2>
-            <div class="price">$15.99 <span>20.99</span></div>
-            <div class="add--remove">
-              <button class="add">Thêm vào giỏ hàng</button>
-              <div class="remove" onclick="Remove(3)">
-                <i class="fa-solid fa-trash"></i>
+          <div class="menu-box" data-key="3">
+            <div class="boxx-left">
+              <img src="./img/menu-1.png" alt="" />
+              <h2>Cà phê sữa đá</h2>
+            </div>
+            <div class="box-right">
+              <div class="price">$15.99 <span>20.99</span></div>
+              <div class="add--remove">
+                <button class="add">Thêm vào giỏ hàng</button>
+                <div class="remove" onclick="Remove(3)">
+                  <i class="fa-solid fa-trash"></i>
+                </div>
               </div>
-              </div>
+            </div>
           </div>
-          <div class="menu-box"  data-key="4">
-            <img src="./img/menu-1.png" alt="" />
-            <h2>Cà phê đen</h2>
-            <div class="price">$15.99 <span>20.99</span></div>
-            <div class="add--remove">
-              <button class="add">Thêm vào giỏ hàng</button>
-              <div class="remove" onclick="Remove(4)">
-                <i class="fa-solid fa-trash"></i>
+          <div class="menu-box" data-key="4">
+            <div class="boxx-left">
+              <img src="./img/menu-1.png" alt="" />
+              <h2>Cà phê sữa đá</h2>
+            </div>
+            <div class="box-right">
+              <div class="price">$15.99 <span>20.99</span></div>
+              <div class="add--remove">
+                <button class="add">Thêm vào giỏ hàng</button>
+                <div class="remove" onclick="Remove(4)">
+                  <i class="fa-solid fa-trash"></i>
+                </div>
               </div>
-              </div>
+            </div>
           </div>
-          <div class="menu-box"  data-key="5">
-            <img src="./img/menu-1.png" alt="" />
-            <h2>Cà phê đen đá</h2>
-            <div class="price">$15.99 <span>20.99</span></div>
-            <div class="add--remove">
-              <button class="add">Thêm vào giỏ hàng</button>
-              <div class="remove" onclick="Remove(5)">
-                <i class="fa-solid fa-trash"></i>
+          <div class="menu-box" data-key="5">
+            <div class="boxx-left">
+              <img src="./img/menu-1.png" alt="" />
+              <h2>Cà phê sữa đá</h2>
+            </div>
+            <div class="box-right">
+              <div class="price">$15.99 <span>20.99</span></div>
+              <div class="add--remove">
+                <button class="add">Thêm vào giỏ hàng</button>
+                <div class="remove" onclick="Remove(5)">
+                  <i class="fa-solid fa-trash"></i>
+                </div>
               </div>
-              </div>
+            </div>
           </div>
-          <div class="menu-box"  data-key="6">
-            <img src="./img/menu-1.png" alt="" />
-            <h2>Cà phê sữa nóng</h2>
-            <div class="price">$15.99 <span>20.99</span></div>
-            <div class="add--remove">
-              <button class="add">Thêm vào giỏ hàng</button>
-              <div class="remove" onclick="Remove(6)">
-                <i class="fa-solid fa-trash"></i>
+          <div class="menu-box" data-key="6">
+            <div class="boxx-left">
+              <img src="./img/menu-1.png" alt="" />
+              <h2>Cà phê sữa đá</h2>
+            </div>
+            <div class="box-right">
+              <div class="price">$15.99 <span>20.99</span></div>
+              <div class="add--remove">
+                <button class="add">Thêm vào giỏ hàng</button>
+                <div class="remove" onclick="Remove(6)">
+                  <i class="fa-solid fa-trash"></i>
+                </div>
               </div>
-              </div>
+            </div>
           </div>
         </div>
       </div>

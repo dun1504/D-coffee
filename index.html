@@ -33,21 +33,22 @@
             <span id="count" class="navbar__bag-quantity">0</span>
           </div>
           <i id="menu-btn" onclick="showMenu()" class="fas fa-bars"></i>
+          <div id="overlay" class="cart__overlay"></div>
         </div>
       </div>
     </header>
 
     <main>
       <div id="mobile-nav-list" class="mobile-nav-list">
-          <i onclick="Close()" class="fa-solid fa-xmark"></i>
+        <i onclick="Close()" class="fa-solid fa-xmark"></i>
         <ul>
-          <li><a href="#home">Trang chủ</a></li>
-          <li><a href="#about">Về chúng tôi</a></li>
-          <li><a href="#menu">Thực đơn</a></li>
-          <li><a href="#product">Sản phẩm</a></li>
-          <li><a href="#review">Đánh giá</a></li>
-          <li><a href="#contact">Liên hệ</a></li>
-          <li><a href="#blog">Tin tức</a></li>
+          <li><i class="fa-solid fa-house"></i><a href="#home">Trang chủ</a></li>
+          <li><i class="fa-solid fa-layer-group"></i><a href="#about">Về chúng tôi</a></li>
+          <li><i class="fa-solid fa-mug-hot"></i><a href="#menu">Thực đơn</a></li>
+          <li><i class="fa-solid fa-calendar-week"></i><a href="#product">Sản phẩm</a></li>
+          <li><i class="fa-solid fa-eye"></i><a href="#review">Đánh giá</a></li>
+          <li><i class="fa-solid fa-phone-volume"></i><a href="#contact">Liên hệ</a></li>
+          <li><i class="fa-solid fa-newspaper"></i><a href="#blog">Tin tức</a></li>
         </ul>
       </div>
       <div class="cart" id="cart">
@@ -60,7 +61,17 @@
         <div class="list-cart"></div>
         <div class="price-cart">
           <p>Tổng tiền:</p>
-          <p>20.000đ</p>
+          <p id="sum-price"></p>
+        </div>
+        <div class="btn-cart__contain">
+          <a href="#" class="btn-cart btn--view">
+            <i class="fa-solid fa-cart-shopping"></i>
+            VIEW CART
+          </a>
+          <a href="#" class="btn-cart btn--checkout">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+            CHECKOUT
+          </a>
         </div>
       </div>
       <div class="main-fresh" id="home">
@@ -113,7 +124,7 @@
               <h2>Cà phê sữa đá</h2>
             </div>
             <div class="box-right">
-              <div class="price">$15.99 <span>20.99</span></div>
+              <div class="price" id="price">15.000đ <span>20.000đ</span></div>
               <div class="add--remove">
                 <button class="add">Thêm vào giỏ hàng</button>
                 <div class="remove" onclick="Remove(1)">
@@ -128,7 +139,7 @@
               <h2>Cà phê sữa đá</h2>
             </div>
             <div class="box-right">
-              <div class="price">$15.99 <span>20.99</span></div>
+              <div class="price" id="price">15.000đ <span>20.000đ</span></div>
               <div class="add--remove">
                 <button class="add">Thêm vào giỏ hàng</button>
                 <div class="remove" onclick="Remove(2)">
@@ -143,7 +154,7 @@
               <h2>Cà phê sữa đá</h2>
             </div>
             <div class="box-right">
-              <div class="price">$15.99 <span>20.99</span></div>
+              <div class="price" id="price">15.000đ <span>20.000đ</span></div>
               <div class="add--remove">
                 <button class="add">Thêm vào giỏ hàng</button>
                 <div class="remove" onclick="Remove(3)">
@@ -158,7 +169,7 @@
               <h2>Cà phê sữa đá</h2>
             </div>
             <div class="box-right">
-              <div class="price">$15.99 <span>20.99</span></div>
+              <div class="price" id="price">15.000đ <span>20.000đ</span></div>
               <div class="add--remove">
                 <button class="add">Thêm vào giỏ hàng</button>
                 <div class="remove" onclick="Remove(4)">
@@ -173,7 +184,7 @@
               <h2>Cà phê sữa đá</h2>
             </div>
             <div class="box-right">
-              <div class="price">$15.99 <span>20.99</span></div>
+              <div class="price" id="price">15.000đ <span>20.000đ</span></div>
               <div class="add--remove">
                 <button class="add">Thêm vào giỏ hàng</button>
                 <div class="remove" onclick="Remove(5)">
@@ -188,7 +199,7 @@
               <h2>Cà phê sữa đá</h2>
             </div>
             <div class="box-right">
-              <div class="price">$15.99 <span>20.99</span></div>
+              <div class="price" id="price">15.000đ <span>20.000đ</span></div>
               <div class="add--remove">
                 <button class="add">Thêm vào giỏ hàng</button>
                 <div class="remove" onclick="Remove(6)">
@@ -222,7 +233,7 @@
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star-half-stroke"></i>
               </div>
-              <div class="price">$15.99 <span>$20.99</span></div>
+              <div class="price">15.000đ <span>$20.000đ</span></div>
             </div>
           </div>
           <div class="box-item">
@@ -243,7 +254,7 @@
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star-half-stroke"></i>
               </div>
-              <div class="price">$15.99 <span>$20.99</span></div>
+              <div class="price">15.000đ <span>$20.000đ</span></div>
             </div>
           </div>
           <div class="box-item">
@@ -264,7 +275,7 @@
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star-half-stroke"></i>
               </div>
-              <div class="price">$15.99 <span>$20.99</span></div>
+              <div class="price">15.000đ <span>$20.000đ</span></div>
             </div>
           </div>
         </div>
@@ -443,7 +454,7 @@
         </ul>
       </div>
       <div class="license">
-        <p>Created By <span>Mr. Dun Hoang </span>| All right Reverved</p>
+        <p>Created By <span>Group two </span>| All right Reverved</p>
       </div>
     </footer>
     <script src="main.js"></script>
